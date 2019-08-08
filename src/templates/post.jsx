@@ -10,6 +10,11 @@ import SEO from "../components/SEO/SEO";
 import config from "../../data/SiteConfig";
 import "./b16-tomorrow-dark.css";
 import "./post.css";
+import styled from "styled-components";
+
+const Post = styled.div`
+  color: whitesmoke;
+`;
 
 export default class PostTemplate extends React.Component {
   render() {
@@ -25,7 +30,7 @@ export default class PostTemplate extends React.Component {
     }
     return (
       <Layout>
-        <div>
+        <Post>
           <Helmet>
             <title>{`${post.title} | ${config.siteTitle}`}</title>
           </Helmet>
@@ -40,7 +45,7 @@ export default class PostTemplate extends React.Component {
             <UserInfo config={config} />
             <Disqus postNode={postNode} />
           </div>
-        </div>
+        </Post>
       </Layout>
     );
   }

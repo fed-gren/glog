@@ -1,5 +1,21 @@
 import React from "react";
 import { Link } from "gatsby";
+import styled from "styled-components";
+import config from "../../../data/SiteConfig";
+
+const PostList = styled.div`
+  padding: 0.8rem 1.5rem;
+
+  & a,
+  & a:visited {
+    text-decoration: none;
+    color: #f5f5f5;
+  }
+
+  & a:hover {
+    text-decoration: underline;
+  }
+`;
 
 class PostListing extends React.Component {
   getPostList() {
@@ -17,17 +33,18 @@ class PostListing extends React.Component {
     });
     return postList;
   }
+
   render() {
     const postList = this.getPostList();
     return (
-      <div>
+      <PostList>
         {/* Your post list here. */
         postList.map(post => (
           <Link to={post.path} key={post.title}>
             <h1>{post.title}</h1>
           </Link>
         ))}
-      </div>
+      </PostList>
     );
   }
 }
