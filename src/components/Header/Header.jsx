@@ -43,7 +43,7 @@ export default _ => {
 
   return (
     <Header>
-      <Link to={config.pathPrefix}>
+      <Link to="/">
         <h1>{config.siteTitle}</h1>
       </Link>
       {/* <LightSwitch changeHandler={changeHandler} checked={checked} /> */}
